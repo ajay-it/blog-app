@@ -123,6 +123,7 @@ export default function DashProfile() {
           id="email"
           placeholder="email"
           defaultValue={currentUser.email}
+          readOnly
         />
         <TextInput type="password" id="password" placeholder="password" />
         <Button type="submit" gradientDuoTone="purpleToBlue" outline>
