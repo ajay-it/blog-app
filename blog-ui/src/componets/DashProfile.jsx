@@ -92,6 +92,32 @@ export default function DashProfile() {
       setUpdateUserError("No changes made");
       return;
     }
+
+    if (formData?.password) {
+      if (formData?.password?.length < 6) {
+        setUpdateUserError("Password must be at least 6 characters");
+        return;
+      }
+    }
+    if (formData?.username) {
+      if (formData?.username?.length < 7 || formData?.username?.length > 20) {
+        setUpdateUserError("Username must be between 7 and 20 characters");
+        return;
+      }
+      if (formData?.username?.includes(" ")) {
+        setUpdateUserError("Username cannot contain spaces");
+        return;
+      }
+      if (formData?.username !== formData?.username?.toLowerCase()) {
+        setUpdateUserError("Username must be lowercase");
+        return;
+      }
+      if (!formData?.username?.match(/^[a-zA-Z0-9]+$/)) {
+        setUpdateUserError("Username can only contain letters and numbers");
+        return;
+      }
+    }
+
     try {
       dispatch(updateStart());
       const res = await fetch(`/api/user/update/${currentUser._id}`, {
