@@ -11,6 +11,7 @@ import {
 import { app } from "../firebase";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import { useNavigate } from "react-router-dom";
 
 export default function CreatePost() {
   const [file, setFile] = useState(null);
@@ -18,6 +19,8 @@ export default function CreatePost() {
   const [imageUploadError, setImageUploadError] = useState(null);
   const [formData, setFormData] = useState({});
   const [publishError, setPublishError] = useState(null);
+
+  const navigate = useNavigate();
 
   const handleUploadImage = () => {
     try {
@@ -75,7 +78,9 @@ export default function CreatePost() {
         return;
       }
       if (res.ok) {
-        ("df");
+        setPublishError(null);
+        setImageUploadError(null);
+        navigate(`/post/${data.slug}`);
       }
     } catch (error) {
       setPublishError("Something went wrong");
