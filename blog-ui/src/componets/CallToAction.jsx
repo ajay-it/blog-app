@@ -6,15 +6,15 @@ export default function CallToAction() {
       <div className="flex-1 justify-center flex flex-col ">
         <h2 className="text-2xl">Want to learn more about me?</h2>
         <p className="text-gray-500 my-2">Checkout my portfolio website</p>
-        <Button gradientDuoTone="purpleToPink">
-          <a
-            href="https://portfolio-ajay-it.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+        <a
+          href="https://portfolio-ajay-it.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button gradientDuoTone="purpleToPink" className="w-full">
             Visit Portfolio
-          </a>
-        </Button>
+          </Button>
+        </a>
       </div>
       <div className="p-7 flex-1">
         <img src="https://cache.careers360.mobi/media/article_images/2022/4/20/How-to-make-portfolio-for-design-admission.webp" />
