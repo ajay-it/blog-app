@@ -100,7 +100,7 @@ export default function DashPosts() {
                       <img
                         src={post.image}
                         alt={post.title}
-                        className="w-20 h-10 bg-gray-500"
+                        className="w-16 h-10 bg-gray-500 rounded-md"
                       />
                     </Link>
                   </Table.Cell>
