@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Button, Spinner } from "flowbite-react";
-import CallToAction from "../componets/CallToAction";
-import CommentSection from "../componets/CommentSection";
-import PostCard from "../componets/PostCard";
+import CallToAction from "../components/CallToAction";
+import CommentSection from "../components/CommentSection";
+import PostCard from "../components/PostCard";
 
 export default function PostPage() {
   const { postSlug } = useParams();
@@ -38,7 +38,6 @@ export default function PostPage() {
       if (res.ok) {
         setRecentPosts(data.posts);
       }
-      fetchRecentPosts();
     } catch (error) {
       console.log(error.message);
     }
@@ -95,7 +94,7 @@ export default function PostPage() {
 
       <div className="flex flex-col justify-center items-center mb-5">
         <h1 className="text-xl mt-5">Recent articles</h1>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-5 justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5 justify-center">
           {recentPosts &&
             recentPosts.map((post) => <PostCard key={post._id} post={post} />)}
         </div>
