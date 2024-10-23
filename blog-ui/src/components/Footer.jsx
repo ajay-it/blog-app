@@ -29,7 +29,7 @@ export default function FooterComponent() {
               <Footer.Title title="About" />
               <Footer.LinkGroup col>
                 <Footer.Link
-                  href="https://portfolio-ajay-it.vercel.app"
+                  href={import.meta.env.VITE_PORTFOLIO_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

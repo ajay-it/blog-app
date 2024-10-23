@@ -7,7 +7,7 @@ export default function CallToAction() {
         <h2 className="text-2xl">Want to learn more about me?</h2>
         <p className="text-gray-500 my-2">Checkout my portfolio website</p>
         <a
-          href="https://portfolio-ajay-it.vercel.app"
+          href={import.meta.env.VITE_PORTFOLIO_URL}
           target="_blank"
           rel="noopener noreferrer"
         >
